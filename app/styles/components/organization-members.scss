@@ -1,4 +1,14 @@
 .organization-members {
+  h3 {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      color: $dark-blue;
+      font-weight: 300;
+    }
+  }
+
   li {
     display: inline-block;
   }

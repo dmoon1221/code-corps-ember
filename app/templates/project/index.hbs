@@ -7,12 +7,16 @@
 </div>
 <div class="project-sidebar">
   {{log project.currentDonationGoal}}
-  <h3>Donations</h3>
-  {{donations/donation-progress
-    amountDonated=1500
-    donationGoal=project.currentDonationGoal}}
-  {{donations/donation-status
-    createDonation=(action 'saveSubscription')
-    subscription=subscription}}
-  {{organization-members members=project.organization.organizationMembers}}  
+  <div class="project-sidebar__section">
+    <h3>Donations</h3>
+    {{donations/donation-progress
+      amountDonated=1500
+      donationGoal=project.currentDonationGoal}}
+    {{donations/donation-status
+      createDonation=(action 'saveSubscription')
+      subscription=subscription}}
+  </div>
+  <div class="project-sidebar__section">
+    {{organization-members count=project.organization.totalMembersCount members=project.organization.organizationMembers}}
+  </div>
 </div>
