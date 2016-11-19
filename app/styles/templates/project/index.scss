@@ -4,4 +4,8 @@
 
 .project-sidebar {
   @include span-columns(4);
+
+  h3 {
+    margin: 10px 0 20px 0;
+  }
 }

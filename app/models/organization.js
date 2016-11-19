@@ -17,6 +17,7 @@ export default Model.extend({
   projects: hasMany('project', { async: true }),
 
   hasPendingMembers: computed.gt('pendingMembersCount', 0),
+  organizationMembers: computed.mapBy('organizationMemberships', 'member'),
   pendingMembersCount: computed.alias('pendingMemberships.length'),
   pendingMemberships: computed.filterBy('organizationMemberships', 'isPending')
 });

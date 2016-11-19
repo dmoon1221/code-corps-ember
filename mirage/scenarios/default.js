@@ -252,4 +252,13 @@ export default function(server) {
     let [category] = server.schema.categories.where({ name }).models;
     server.create('project-category', { category, project });
   });
+
+  server.create('donation-goal', {
+    amount: 1250000,
+    current: true,
+    description:`
+We can make regular, ongoing improvements with two full-time developers and one full-time community manager. All our overhead costs (like servers, services, etc) will be completely covered. And most importantly, we'll significantly increase the pace of our progress.
+`,
+    project
+  });
 }

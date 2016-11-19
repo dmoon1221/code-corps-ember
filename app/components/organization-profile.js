@@ -11,8 +11,6 @@ export default Component.extend({
 
   credentials: service(),
 
-  organizationMembers: mapBy('organization.organizationMemberships', 'member'),
-
   didReceiveAttrs() {
     this._super(...arguments);
     this.get('credentials').set('currentOrganization', this.get('organization'));

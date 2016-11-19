@@ -36,13 +36,15 @@ export default Component.extend({
    */
   amountNeeded: computed.alias('donationGoal.amount'),
 
+  description: computed.alias('donationGoal.description'),
+
   /**
    * A computed field. Uses fields `amountDonated` and `amountNeeded` to
    * compute a percentage.
    *
    * @return {String} The computed percentage, rounded to two decimals.
    */
-  percentage: computed('amountDonated', 'donationGoal.amount', function() {
+  percentage: computed('amountDonated', 'amountNeeded', function() {
     let { amountDonated, amountNeeded } = this.getProperties('amountDonated', 'amountNeeded');
     let percentage = amountDonated / amountNeeded * 100;
     return percentage.toFixed(2);
